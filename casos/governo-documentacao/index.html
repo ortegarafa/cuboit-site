@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Agentes de IA para prefeituras e governos: documentação de todas as secretarias — Cuboit</title>
-<meta name="description" content="Caso de uso hipotético: uma prefeitura ou governo estadual organiza a documentação de todas as secretarias com agentes de IA, responde servidores e cidadãos com fonte e mantém trilha de auditoria para LAI e LGPD.">
+<title>Agentes de IA para prefeituras e governos: documentos e pedidos entre dezenas de secretarias — Cuboit</title>
+<meta name="description" content="Caso de uso hipotético: uma prefeitura ou governo estadual com dezenas de secretarias usa um orquestrador de agentes de IA que organiza a documentação, identifica dependências entre secretarias e encaminha cada pedido, com fonte e trilha de auditoria.">
 <link rel="icon" href="/images/favicon/favicon.ico" sizes="48x48">
 <link rel="icon" href="/images/favicon/favicon.svg" type="image/svg+xml">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
@@ -17,14 +17,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Cuboit">
 <meta property="og:url" content="https://cuboit.com.br/casos/governo-documentacao/">
-<meta property="og:title" content="Agentes de IA para prefeituras e governos: documentação de todas as secretarias — Cuboit">
-<meta property="og:description" content="Caso de uso hipotético: uma prefeitura ou governo estadual organiza a documentação de todas as secretarias com agentes de IA, responde servidores e cidadãos com fonte e mantém trilha de auditoria para LAI e LGPD.">
+<meta property="og:title" content="Agentes de IA para prefeituras e governos: documentos e pedidos entre dezenas de secretarias — Cuboit">
+<meta property="og:description" content="Caso de uso hipotético: uma prefeitura ou governo estadual com dezenas de secretarias usa um orquestrador de agentes de IA que organiza a documentação, identifica dependências entre secretarias e encaminha cada pedido, com fonte e trilha de auditoria.">
 <meta property="og:image" content="https://cuboit.com.br/images/logos/png/cuboit-logo-claro.png">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Agentes de IA para prefeituras e governos: documentação de todas as secretarias — Cuboit">
-<meta name="twitter:description" content="Caso de uso hipotético: uma prefeitura ou governo estadual organiza a documentação de todas as secretarias com agentes de IA, responde servidores e cidadãos com fonte e mantém trilha de auditoria para LAI e LGPD.">
+<meta name="twitter:title" content="Agentes de IA para prefeituras e governos: documentos e pedidos entre dezenas de secretarias — Cuboit">
+<meta name="twitter:description" content="Caso de uso hipotético: uma prefeitura ou governo estadual com dezenas de secretarias usa um orquestrador de agentes de IA que organiza a documentação, identifica dependências entre secretarias e encaminha cada pedido, com fonte e trilha de auditoria.">
 <link rel="alternate" type="text/plain" href="https://cuboit.com.br/llms.txt" title="llms.txt">
 <link rel="alternate" hreflang="pt-BR" href="https://cuboit.com.br/casos/governo-documentacao/">
 <link rel="alternate" hreflang="en" href="https://cuboit.com.br/en/cases/government-documents/">
@@ -40,8 +40,8 @@
  "@graph": [
   {
    "@type": "Article",
-   "headline": "Agentes de IA para prefeituras e governos: toda a documentação, em todas as secretarias.",
-   "description": "Caso de uso hipotético: uma prefeitura ou governo estadual organiza a documentação de todas as secretarias com agentes de IA, responde servidores e cidadãos com fonte e mantém trilha de auditoria para LAI e LGPD.",
+   "headline": "Agentes de IA para prefeituras e governos: cada pedido, na secretaria certa.",
+   "description": "Caso de uso hipotético: uma prefeitura ou governo estadual com dezenas de secretarias usa um orquestrador de agentes de IA que organiza a documentação, identifica dependências entre secretarias e encaminha cada pedido, com fonte e trilha de auditoria.",
    "inLanguage": "pt-BR",
    "url": "https://cuboit.com.br/casos/governo-documentacao/",
    "datePublished": "2026-09-28",
@@ -77,7 +77,7 @@
     {
      "@type": "ListItem",
      "position": 3,
-     "name": "Agentes de IA para prefeituras e governos: toda a documentação, em todas as secretarias.",
+     "name": "Agentes de IA para prefeituras e governos: cada pedido, na secretaria certa.",
      "item": "https://cuboit.com.br/casos/governo-documentacao/"
     }
    ]
@@ -149,38 +149,39 @@
   <div class="wrap">
     <a class="case-back" href="/#cases">← Todos os cases</a>
     <span class="uc-tag">Caso de uso · Setor público</span>
-    <h1>Agentes de IA para prefeituras e governos: <span class="grad">toda a documentação, em todas as secretarias.</span></h1>
-    <p class="lead">Uma prefeitura ou um governo estadual tem documentos espalhados por várias secretarias, como saúde, educação, obras, fazenda e administração, em papel, pastas de rede e sistemas que não conversam entre si. Servidores perdem horas procurando leis, decretos, processos e pareceres, e o cidadão espera dias por respostas simples.</p>
+    <h1>Agentes de IA para prefeituras e governos: <span class="grad">cada pedido, na secretaria certa.</span></h1>
+    <p class="lead">Uma prefeitura ou um governo estadual tem dezenas de secretarias, cada uma com seus documentos, sistemas e rotinas. Um pedido raramente fica numa secretaria só: uma renovação de contrato na Administração depende do Jurídico e da Fazenda, uma obra depende de Meio Ambiente e Planejamento. Quando essa ligação não é percebida, o processo anda, volta e atrasa semanas.</p>
   </div>
 </section>
 
 <section class="case-sec">
   <div class="wrap">
     <h2 class="case-h2">O problema</h2>
-    <div class="pains"><div class="pain"><b>Documentos espalhados</b><p>Cada secretaria guarda de um jeito, em sistemas e pastas diferentes. Achar a versão certa de um decreto ou processo depende de quem sabe onde está.</p></div><div class="pain"><b>Respostas lentas e desencontradas</b><p>A mesma pergunta recebe respostas diferentes conforme quem atende, e pedidos passam de mesa em mesa até chegar à secretaria certa.</p></div><div class="pain"><b>Cobrança por transparência</b><p>A Lei de Acesso à Informação e os órgãos de controle exigem prazo, registro e justificativa de cada decisão.</p></div></div>
+    <div class="pains"><div class="pain"><b>Documentos espalhados</b><p>Cada secretaria guarda de um jeito, em sistemas e pastas diferentes. Achar a versão certa de um decreto, contrato ou processo depende de quem sabe onde está.</p></div><div class="pain"><b>Dependências que ninguém vê</b><p>Um pedido da Administração que precisa de parecer do Jurídico segue sem ele e volta semanas depois. Com dezenas de secretarias, ninguém consegue enxergar todas as ligações.</p></div><div class="pain"><b>Cobrança por transparência</b><p>A Lei de Acesso à Informação e os órgãos de controle exigem prazo, registro e justificativa de cada decisão.</p></div></div>
   </div>
 </section>
 
 <section class="case-sec soft">
   <div class="wrap">
-    <h2 class="case-h2">A solução: três agentes, uma base única</h2>
+    <h2 class="case-h2">A solução: um orquestrador e agentes especialistas</h2>
     <div class="usecase">
       <div class="uc-main">
         <div class="uc-agents">
-          <div><div class="tile t-violet"><svg><use href="#i-folders"/></svg></div><b>Agente de organização documental</b><p>Classifica e indexa os documentos de todas as secretarias por tipo, assunto, data e órgão, aponta versões e duplicidades e deixa tudo pesquisável num só lugar, respeitando quem pode ver o quê.</p></div>
-          <div><div class="tile t-teal"><svg><use href="#i-search"/></svg></div><b>Agente de consulta para servidores</b><p>Responde perguntas com base em leis, decretos, portarias e processos, sempre citando o documento de origem, e prepara minutas que um servidor revisa e assina.</p></div>
-          <div><div class="tile t-blue"><svg><use href="#i-chat"/></svg></div><b>Agente de atendimento ao cidadão</b><p>Tira dúvidas no site e no WhatsApp sobre serviços, documentos necessários e andamento de protocolos, e encaminha cada pedido para a secretaria certa, com registro.</p></div>
+          <div><div class="tile t-orange"><svg><use href="#i-flow"/></svg></div><b>Orquestrador</b><p>Recebe cada pedido, entende do que se trata e decide quais agentes e secretarias precisam participar. Identifica dependências que passariam despercebidas, como um pedido da Administração que precisa de parecer do Jurídico, e envia cada parte para o lugar certo, ao mesmo tempo.</p></div>
+          <div><div class="tile t-violet"><svg><use href="#i-folders"/></svg></div><b>Agentes especialistas por secretaria</b><p>Cada secretaria tem um agente que conhece seus documentos, normas e processos. Ele classifica, indexa e responde sempre com a fonte, respeitando quem pode ver o quê.</p></div>
+          <div><div class="tile t-teal"><svg><use href="#i-search"/></svg></div><b>Consulta para servidores</b><p>Responde perguntas com base em leis, decretos, portarias e processos de qualquer secretaria, citando o documento de origem, e prepara minutas que um servidor revisa e assina.</p></div>
+          <div><div class="tile t-blue"><svg><use href="#i-chat"/></svg></div><b>Atendimento ao cidadão</b><p>Tira dúvidas no site e no WhatsApp sobre serviços, documentos e andamento de protocolos. Cada pedido do cidadão entra pelo orquestrador e segue para quem precisa decidir.</p></div>
         </div>
-        <div class="uc-care"><b>Transparência e segurança</b><ul><li>Permissões por secretaria e por cargo</li><li>Cada consulta e decisão registrada, com trilha de auditoria exportável</li><li>Respostas rastreáveis, que apoiam os pedidos da Lei de Acesso à Informação</li><li>Dados pessoais de cidadãos tratados conforme a LGPD</li><li>Implantação em nuvem soberana ou no ambiente do próprio órgão</li><li>Decisões sempre de um servidor responsável; o agente só apoia</li></ul></div>
+        <div class="uc-care"><b>Transparência e segurança</b><ul><li>Permissões por secretaria e por cargo</li><li>Cada encaminhamento, consulta e decisão registrado, com trilha de auditoria exportável</li><li>Respostas rastreáveis, que apoiam os pedidos da Lei de Acesso à Informação</li><li>Dados pessoais de cidadãos tratados conforme a LGPD</li><li>Implantação em nuvem soberana ou no ambiente do próprio órgão</li><li>Decisões sempre de um servidor responsável; os agentes só apoiam</li></ul></div>
       </div>
       <div class="uc-journey">
-        <b>A jornada de um pedido</b>
+        <b>A jornada de um pedido entre secretarias</b>
         <ol>
-          <li><div class="tile t-blue"><svg><use href="#i-chat"/></svg></div><div><b>Cidadão</b><p>Pergunta no WhatsApp o que precisa para tirar um alvará de obra.</p></div></li>
-          <li><div class="tile t-violet"><svg><use href="#i-user"/></svg></div><div><b>Agente de atendimento</b><p>Lista os documentos com base na legislação local e abre o protocolo.</p></div></li>
-          <li><div class="tile t-orange"><svg><use href="#i-flow"/></svg></div><div><b>Cubo Flow</b><p>O protocolo vira um cartão e vai direto para a Secretaria de Obras.</p></div></li>
-          <li><div class="tile t-teal"><svg><use href="#i-search"/></svg></div><div><b>Agente de consulta</b><p>Mostra ao servidor a legislação e processos parecidos, com fonte.</p></div></li>
-          <li><div class="tile t-pink"><svg><use href="#i-hand"/></svg></div><div><b>Servidor responsável</b><p>Analisa, decide e assina. O cidadão é avisado, e tudo fica registrado.</p></div></li>
+          <li><div class="tile t-blue"><svg><use href="#i-user"/></svg></div><div><b>Secretaria de Administração</b><p>Abre um pedido para renovar o contrato de um prestador de serviço.</p></div></li>
+          <li><div class="tile t-orange"><svg><use href="#i-flow"/></svg></div><div><b>Orquestrador</b><p>Percebe que a renovação exige parecer do Jurídico e confirmação de orçamento da Fazenda.</p></div></li>
+          <li><div class="tile t-violet"><svg><use href="#i-folders"/></svg></div><div><b>Agentes do Jurídico e da Fazenda</b><p>Reúnem o contrato, a legislação aplicável e a dotação orçamentária, com fonte.</p></div></li>
+          <li><div class="tile t-teal"><svg><use href="#i-search"/></svg></div><div><b>Servidores responsáveis</b><p>Recebem tudo pronto no Cubo Flow e dão parecer em paralelo, não em sequência.</p></div></li>
+          <li><div class="tile t-pink"><svg><use href="#i-hand"/></svg></div><div><b>Administração</b><p>Decide com o processo completo. Cada passo fica registrado para auditoria.</p></div></li>
         </ol>
       </div>
     </div>
@@ -190,14 +191,14 @@
 <section class="case-sec">
   <div class="wrap case-biz">
     <h2 class="case-h2">Por que funciona para prefeituras e governos</h2>
-    <p class="lead">A gestão passa a enxergar todas as secretarias num painel, os servidores deixam de procurar documento e passam a decidir, e o cidadão tem resposta a qualquer hora. A prestação de contas fica mais simples, porque cada passo já nasce registrado.</p>
+    <p class="lead">O orquestrador enxerga o que nenhuma pessoa consegue acompanhar sozinha: as ligações entre dezenas de secretarias. Pedidos chegam completos a quem decide, pareceres acontecem em paralelo, a gestão acompanha tudo num painel e a prestação de contas fica simples, porque cada passo já nasce registrado.</p>
   </div>
 </section>
 
 <section class="case-sec soft">
   <div class="wrap">
     <h2 class="case-h2">Como a Cuboit implanta</h2>
-    <div class="steps steps-3"><div class="step"><span class="n">etapa 1</span><h3>Diagnóstico</h3><p>Inventário de documentos, sistemas e fluxos em cada secretaria.</p><span class="dur">2 a 4 semanas</span></div><div class="step"><span class="n">etapa 2</span><h3>Piloto em uma secretaria</h3><p>Organização documental, consulta para servidores e atendimento de um tipo de serviço.</p><span class="dur">6 a 8 semanas</span></div><div class="step"><span class="n">etapa 3</span><h3>Expansão</h3><p>As demais secretarias entram uma a uma, na mesma base.</p><span class="dur">por secretaria</span></div></div>
+    <div class="steps steps-3"><div class="step"><span class="n">etapa 1</span><h3>Diagnóstico</h3><p>Mapa de documentos, sistemas e dos fluxos de pedidos entre as secretarias.</p><span class="dur">3 a 4 semanas</span></div><div class="step"><span class="n">etapa 2</span><h3>Piloto com secretarias que se cruzam</h3><p>Orquestrador e agentes em três secretarias que trocam muitos pedidos, como Administração, Jurídico e Fazenda.</p><span class="dur">6 a 8 semanas</span></div><div class="step"><span class="n">etapa 3</span><h3>Expansão</h3><p>As demais secretarias entram uma a uma, e o orquestrador passa a enxergar cada nova ligação.</p><span class="dur">por secretaria</span></div></div>
     <p class="case-note">Cenário hipotético, criado para ilustrar como a plataforma funciona. Resultados dependem de cada operação e são medidos no piloto.</p>
   </div>
 </section>

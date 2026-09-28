@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AI agents for city halls and governments: documents across every department — Cuboit</title>
-<meta name="description" content="Hypothetical use case: a city hall or state government organizes documents from every department with AI agents, answers staff and citizens with sources, and keeps an audit trail for transparency and data protection laws.">
+<title>AI agents for city halls and governments: documents and requests across dozens of departments — Cuboit</title>
+<meta name="description" content="Hypothetical use case: a city hall or state government with dozens of departments uses an AI agent orchestrator that organizes documents, spots dependencies between departments and routes every request, with sources and an audit trail.">
 <link rel="icon" href="/images/favicon/favicon.ico" sizes="48x48">
 <link rel="icon" href="/images/favicon/favicon.svg" type="image/svg+xml">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
@@ -17,14 +17,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Cuboit">
 <meta property="og:url" content="https://cuboit.com.br/en/cases/government-documents/">
-<meta property="og:title" content="AI agents for city halls and governments: documents across every department — Cuboit">
-<meta property="og:description" content="Hypothetical use case: a city hall or state government organizes documents from every department with AI agents, answers staff and citizens with sources, and keeps an audit trail for transparency and data protection laws.">
+<meta property="og:title" content="AI agents for city halls and governments: documents and requests across dozens of departments — Cuboit">
+<meta property="og:description" content="Hypothetical use case: a city hall or state government with dozens of departments uses an AI agent orchestrator that organizes documents, spots dependencies between departments and routes every request, with sources and an audit trail.">
 <meta property="og:image" content="https://cuboit.com.br/images/logos/png/cuboit-logo-claro.png">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI agents for city halls and governments: documents across every department — Cuboit">
-<meta name="twitter:description" content="Hypothetical use case: a city hall or state government organizes documents from every department with AI agents, answers staff and citizens with sources, and keeps an audit trail for transparency and data protection laws.">
+<meta name="twitter:title" content="AI agents for city halls and governments: documents and requests across dozens of departments — Cuboit">
+<meta name="twitter:description" content="Hypothetical use case: a city hall or state government with dozens of departments uses an AI agent orchestrator that organizes documents, spots dependencies between departments and routes every request, with sources and an audit trail.">
 <link rel="alternate" type="text/plain" href="https://cuboit.com.br/llms.txt" title="llms.txt">
 <link rel="alternate" hreflang="pt-BR" href="https://cuboit.com.br/casos/governo-documentacao/">
 <link rel="alternate" hreflang="en" href="https://cuboit.com.br/en/cases/government-documents/">
@@ -40,8 +40,8 @@
  "@graph": [
   {
    "@type": "Article",
-   "headline": "AI agents for city halls and governments: every document, across every department.",
-   "description": "Hypothetical use case: a city hall or state government organizes documents from every department with AI agents, answers staff and citizens with sources, and keeps an audit trail for transparency and data protection laws.",
+   "headline": "AI agents for city halls and governments: every request, in the right department.",
+   "description": "Hypothetical use case: a city hall or state government with dozens of departments uses an AI agent orchestrator that organizes documents, spots dependencies between departments and routes every request, with sources and an audit trail.",
    "inLanguage": "en",
    "url": "https://cuboit.com.br/en/cases/government-documents/",
    "datePublished": "2026-09-28",
@@ -77,7 +77,7 @@
     {
      "@type": "ListItem",
      "position": 3,
-     "name": "AI agents for city halls and governments: every document, across every department.",
+     "name": "AI agents for city halls and governments: every request, in the right department.",
      "item": "https://cuboit.com.br/en/cases/government-documents/"
     }
    ]
@@ -149,38 +149,39 @@
   <div class="wrap">
     <a class="case-back" href="/en/#cases">← All cases</a>
     <span class="uc-tag">Use case · Public sector</span>
-    <h1>AI agents for city halls and governments: <span class="grad">every document, across every department.</span></h1>
-    <p class="lead">A city hall or state government keeps documents across many departments, such as health, education, public works, finance and administration, on paper, in shared folders and in systems that don’t talk to each other. Staff lose hours looking for laws, decrees, cases and opinions, and citizens wait days for simple answers.</p>
+    <h1>AI agents for city halls and governments: <span class="grad">every request, in the right department.</span></h1>
+    <p class="lead">A city hall or state government has dozens of departments, each with its own documents, systems and routines. A request rarely stays in one department: a contract renewal in Administration depends on Legal and Finance, a building project depends on Environment and Planning. When that link goes unnoticed, the case moves forward, comes back and loses weeks.</p>
   </div>
 </section>
 
 <section class="case-sec">
   <div class="wrap">
     <h2 class="case-h2">The problem</h2>
-    <div class="pains"><div class="pain"><b>Scattered documents</b><p>Each department stores files its own way, in different systems and folders. Finding the right version of a decree or case depends on who knows where it is.</p></div><div class="pain"><b>Slow, inconsistent answers</b><p>The same question gets different answers depending on who replies, and requests bounce between desks before reaching the right department.</p></div><div class="pain"><b>Pressure for transparency</b><p>Brazil’s Access to Information Law and oversight bodies require deadlines, records and a justification for every decision.</p></div></div>
+    <div class="pains"><div class="pain"><b>Scattered documents</b><p>Each department stores files its own way, in different systems and folders. Finding the right version of a decree, contract or case depends on who knows where it is.</p></div><div class="pain"><b>Dependencies nobody sees</b><p>An Administration request that needs a Legal opinion moves on without it and comes back weeks later. With dozens of departments, no one can see every connection.</p></div><div class="pain"><b>Pressure for transparency</b><p>Brazil’s Access to Information Law and oversight bodies require deadlines, records and a justification for every decision.</p></div></div>
   </div>
 </section>
 
 <section class="case-sec soft">
   <div class="wrap">
-    <h2 class="case-h2">The solution: three agents, one foundation</h2>
+    <h2 class="case-h2">The solution: an orchestrator and specialist agents</h2>
     <div class="usecase">
       <div class="uc-main">
         <div class="uc-agents">
-          <div><div class="tile t-violet"><svg><use href="#i-folders"/></svg></div><b>Document organization agent</b><p>Classifies and indexes documents from every department by type, subject, date and office, flags versions and duplicates, and makes everything searchable in one place, respecting who can see what.</p></div>
-          <div><div class="tile t-teal"><svg><use href="#i-search"/></svg></div><b>Staff research agent</b><p>Answers questions based on laws, decrees, ordinances and cases, always citing the source document, and drafts documents that a civil servant reviews and signs.</p></div>
-          <div><div class="tile t-blue"><svg><use href="#i-chat"/></svg></div><b>Citizen service agent</b><p>Answers questions on the website and WhatsApp about services, required documents and case status, and routes every request to the right department, with a record.</p></div>
+          <div><div class="tile t-orange"><svg><use href="#i-flow"/></svg></div><b>Orchestrator</b><p>Receives every request, understands what it is about and decides which agents and departments must take part. It catches dependencies people would miss, such as an Administration request that needs a Legal opinion, and sends each part to the right place at the same time.</p></div>
+          <div><div class="tile t-violet"><svg><use href="#i-folders"/></svg></div><b>Specialist agents per department</b><p>Each department has an agent that knows its documents, rules and processes. It classifies, indexes and answers, always citing the source and respecting who can see what.</p></div>
+          <div><div class="tile t-teal"><svg><use href="#i-search"/></svg></div><b>Staff research</b><p>Answers questions based on laws, decrees, ordinances and cases from any department, citing the source document, and drafts documents that a civil servant reviews and signs.</p></div>
+          <div><div class="tile t-blue"><svg><use href="#i-chat"/></svg></div><b>Citizen service</b><p>Answers questions on the website and WhatsApp about services, documents and case status. Every citizen request goes through the orchestrator to whoever needs to decide.</p></div>
         </div>
-        <div class="uc-care"><b>Transparency and security</b><ul><li>Permissions by department and role</li><li>Every query and decision logged, with an exportable audit trail</li><li>Traceable answers that support access-to-information requests</li><li>Citizens’ personal data handled under Brazil’s LGPD</li><li>Deployment on a sovereign cloud or in the agency’s own environment</li><li>Decisions always made by a responsible civil servant; the agent only assists</li></ul></div>
+        <div class="uc-care"><b>Transparency and security</b><ul><li>Permissions by department and role</li><li>Every routing, query and decision logged, with an exportable audit trail</li><li>Traceable answers that support access-to-information requests</li><li>Citizens’ personal data handled under Brazil’s LGPD</li><li>Deployment on a sovereign cloud or in the agency’s own environment</li><li>Decisions always made by a responsible civil servant; the agents only assist</li></ul></div>
       </div>
       <div class="uc-journey">
-        <b>One request’s journey</b>
+        <b>One request’s journey across departments</b>
         <ol>
-          <li><div class="tile t-blue"><svg><use href="#i-chat"/></svg></div><div><b>Citizen</b><p>Asks on WhatsApp what is needed for a building permit.</p></div></li>
-          <li><div class="tile t-violet"><svg><use href="#i-user"/></svg></div><div><b>Service agent</b><p>Lists the documents based on local law and opens a case.</p></div></li>
-          <li><div class="tile t-orange"><svg><use href="#i-flow"/></svg></div><div><b>Cubo Flow</b><p>The case becomes a card and goes straight to the Public Works department.</p></div></li>
-          <li><div class="tile t-teal"><svg><use href="#i-search"/></svg></div><div><b>Research agent</b><p>Shows the civil servant the relevant law and similar cases, with sources.</p></div></li>
-          <li><div class="tile t-pink"><svg><use href="#i-hand"/></svg></div><div><b>Civil servant in charge</b><p>Reviews, decides and signs. The citizen is notified, and everything is logged.</p></div></li>
+          <li><div class="tile t-blue"><svg><use href="#i-user"/></svg></div><div><b>Administration department</b><p>Opens a request to renew a service provider’s contract.</p></div></li>
+          <li><div class="tile t-orange"><svg><use href="#i-flow"/></svg></div><div><b>Orchestrator</b><p>Notices the renewal requires a Legal opinion and a budget check from Finance.</p></div></li>
+          <li><div class="tile t-violet"><svg><use href="#i-folders"/></svg></div><div><b>Legal and Finance agents</b><p>Gather the contract, the applicable law and the budget allocation, with sources.</p></div></li>
+          <li><div class="tile t-teal"><svg><use href="#i-search"/></svg></div><div><b>Civil servants in charge</b><p>Get everything ready in Cubo Flow and give their opinions in parallel, not one after another.</p></div></li>
+          <li><div class="tile t-pink"><svg><use href="#i-hand"/></svg></div><div><b>Administration</b><p>Decides with the complete case. Every step is logged for audit.</p></div></li>
         </ol>
       </div>
     </div>
@@ -190,14 +191,14 @@
 <section class="case-sec">
   <div class="wrap case-biz">
     <h2 class="case-h2">Why it works for city halls and governments</h2>
-    <p class="lead">Leadership sees every department on one dashboard, staff stop searching for documents and start deciding, and citizens get answers at any hour. Accountability gets simpler because every step is recorded from the start.</p>
+    <p class="lead">The orchestrator sees what no single person can keep track of: the connections between dozens of departments. Requests reach decision makers complete, opinions happen in parallel, leadership follows everything on one dashboard, and accountability gets simple because every step is recorded from the start.</p>
   </div>
 </section>
 
 <section class="case-sec soft">
   <div class="wrap">
     <h2 class="case-h2">How Cuboit rolls it out</h2>
-    <div class="steps steps-3"><div class="step"><span class="n">step 1</span><h3>Assessment</h3><p>Inventory of documents, systems and workflows in each department.</p><span class="dur">2–4 weeks</span></div><div class="step"><span class="n">step 2</span><h3>Pilot in one department</h3><p>Document organization, staff research and citizen service for one type of request.</p><span class="dur">6–8 weeks</span></div><div class="step"><span class="n">step 3</span><h3>Expansion</h3><p>The other departments join one by one, on the same foundation.</p><span class="dur">per department</span></div></div>
+    <div class="steps steps-3"><div class="step"><span class="n">step 1</span><h3>Assessment</h3><p>Map of documents, systems and request flows between departments.</p><span class="dur">3–4 weeks</span></div><div class="step"><span class="n">step 2</span><h3>Pilot with connected departments</h3><p>Orchestrator and agents in three departments that exchange many requests, such as Administration, Legal and Finance.</p><span class="dur">6–8 weeks</span></div><div class="step"><span class="n">step 3</span><h3>Expansion</h3><p>The other departments join one by one, and the orchestrator learns each new connection.</p><span class="dur">per department</span></div></div>
     <p class="case-note">Hypothetical scenario, created to show how the platform works. Results depend on each operation and are measured during the pilot.</p>
   </div>
 </section>
