@@ -17,7 +17,7 @@ Roteiro para trocar o WordPress antigo pelo site novo em cuboit.com.br.
 
 ## 2. Preparar
 
-1. Confirme que a conta `contato@cuboit.com.br` existe e está ativa no painel de e-mails. Se o endereço for outro, ajuste `DESTINO` e `REMETENTE` no `enviar.php`.
+1. O formulário envia **de** `site@cuboit.com.br` (caixa postal real; alias não funciona como remetente na KingHost) **para** `contato@cuboit.com.br` (alias). Se mudar, ajuste `REMETENTE` e `DESTINO` no `enviar.php`.
 2. Confirme que o plano tem PHP ativo (planos Linux têm).
 3. Confirme que o certificado SSL (HTTPS) está ativo para `cuboit.com.br` e `www.cuboit.com.br`.
 

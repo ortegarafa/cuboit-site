@@ -9,7 +9,7 @@
 
 // ===== Configuração =====
 const DESTINO   = 'contato@cuboit.com.br';   // quem recebe os pedidos
-const REMETENTE = 'contato@cuboit.com.br';   // conta existente no domínio (exigência da KingHost)
+const REMETENTE = 'site@cuboit.com.br';      // caixa postal real do domínio (alias não serve: exigência da KingHost)
 const ORIGENS   = ['https://cuboit.com.br', 'https://www.cuboit.com.br'];
 // ========================
 
