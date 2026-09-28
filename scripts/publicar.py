@@ -72,10 +72,15 @@ def main():
     print(f"{len(lista)} arquivos serão enviados para {host}:/{base}/")
     senha = getpass.getpass(f"Senha de FTP de {usuario}: ")
     ftp = conectar(host, usuario, senha)
+    ftp.encoding = "latin-1"  # servidor antigo tem nomes com acento fora do UTF-8
 
-    raiz_remota = ftp.nlst()
-    if base not in [n.strip("/").split("/")[-1] for n in raiz_remota]:
-        print(f"A pasta '{base}' não existe na raiz do FTP. Pastas encontradas: {raiz_remota}")
+    # Confere se a pasta existe entrando nela (listar a raiz falha com nomes antigos acentuados)
+    inicio = ftp.pwd()
+    try:
+        ftp.cwd(base)
+        ftp.cwd(inicio)
+    except ftplib.error_perm:
+        print(f"A pasta '{base}' não existe no FTP (pasta inicial: {inicio}).")
         print("Rode de novo informando a pasta certa como terceiro argumento.")
         ftp.quit()
         sys.exit(2)
