@@ -23,6 +23,21 @@ Roteiro para trocar o WordPress antigo pelo site novo em cuboit.com.br.
 
 ## 3. Trocar os arquivos
 
+### Opção A — pelo GitHub (recomendado)
+
+1. No GitHub, em **Settings → Secrets and variables → Actions → New repository secret**, cadastre:
+   - `FTP_SERVER`: host de FTP (painel KingHost → Gerenciar FTP)
+   - `FTP_USERNAME`: usuário de FTP
+   - `FTP_PASSWORD`: senha de FTP
+   - `FTP_SERVER_DIR` (opcional): pasta pública com barra no fim. Se não cadastrar, usa `./www/`
+2. Faça o backup (passo 1) e mova o WordPress para fora da pasta pública (item 1 da opção B).
+3. Na aba **Actions → Publicar na KingHost → Run workflow**:
+   - primeiro com **"Só simular" marcado**: confira no registro a lista do que seria enviado e a pasta de destino;
+   - depois com **"Só simular" desmarcado**, para enviar de verdade.
+4. Se der erro de conexão com `ftps`, rode de novo escolhendo `ftp`.
+
+### Opção B — manual, por FTP
+
 1. Por FTP, crie a pasta `_wordpress_antigo` **fora** da pasta pública (um nível acima) e mova para ela todo o conteúdo atual da pasta pública.
    - Se o FTP não permitir sair da pasta pública, baixe tudo (passo 1.2) e depois apague da pasta pública.
 2. Envie para a pasta pública **somente** estes itens:

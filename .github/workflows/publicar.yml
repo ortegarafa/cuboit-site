@@ -1,0 +1,49 @@
+# Publica o site na KingHost por FTP.
+# Os dados de acesso ficam em Settings → Secrets and variables → Actions:
+#   FTP_SERVER, FTP_USERNAME, FTP_PASSWORD e (opcional) FTP_SERVER_DIR
+# Por enquanto só roda manualmente (aba Actions → Publicar na KingHost → Run workflow).
+
+name: Publicar na KingHost
+
+on:
+  workflow_dispatch:
+    inputs:
+      simulacao:
+        description: "Só simular (lista o que seria enviado, sem enviar nada)"
+        type: boolean
+        default: true
+      protocolo:
+        description: "Protocolo (ftps é criptografado; use ftp só se ftps falhar)"
+        type: choice
+        options: [ftps, ftp]
+        default: ftps
+
+concurrency:
+  group: publicar-kinghost
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enviar arquivos por FTP
+        uses: SamKirkland/FTP-Deploy-Action@110f9186c050f71550953127052e77650219c287 # v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ${{ inputs.protocolo }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR || './www/' }}
+          dry-run: ${{ inputs.simulacao }}
+          state-name: .ftp-deploy-sync-state.json
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            **/.DS_Store
+            README.md
+            PUBLICAR.md
+            proposta-comunicacao.html
