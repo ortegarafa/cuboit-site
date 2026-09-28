@@ -76,6 +76,9 @@ def main():
 
     # Confere se a pasta existe entrando nela (listar a raiz falha com nomes antigos acentuados)
     inicio = ftp.pwd()
+    if inicio.rstrip("/").endswith("/" + base):
+        base = "."  # o FTP já abre dentro da pasta pública
+        print(f"O FTP já abre na pasta pública ({inicio}).")
     try:
         ftp.cwd(base)
         ftp.cwd(inicio)

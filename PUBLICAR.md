@@ -29,7 +29,7 @@ Roteiro para trocar o WordPress antigo pelo site novo em cuboit.com.br.
    - `FTP_SERVER`: host de FTP (painel KingHost → Gerenciar FTP)
    - `FTP_USERNAME`: usuário de FTP
    - `FTP_PASSWORD`: senha de FTP
-   - `FTP_SERVER_DIR` (opcional): pasta pública com barra no fim. Se não cadastrar, usa `./www/`
+   - `FTP_SERVER_DIR` (opcional): pasta pública com barra no fim. Não é necessário: o FTP da KingHost já abre em `/www`
 2. Faça o backup (passo 1) e mova o WordPress para fora da pasta pública (item 1 da opção B).
 3. Na aba **Actions → Publicar na KingHost → Run workflow**:
    - primeiro com **"Só simular" marcado**: confira no registro a lista do que seria enviado e a pasta de destino;

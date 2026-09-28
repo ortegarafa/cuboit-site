@@ -1,4 +1,5 @@
 # Publica o site na KingHost por FTP.
+# O FTP da KingHost já abre dentro da pasta pública (/www).
 # Os dados de acesso ficam em Settings → Secrets and variables → Actions:
 #   FTP_SERVER, FTP_USERNAME, FTP_PASSWORD e (opcional) FTP_SERVER_DIR
 # Por enquanto só roda manualmente (aba Actions → Publicar na KingHost → Run workflow).
@@ -36,7 +37,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ${{ inputs.protocolo }}
-          server-dir: ${{ secrets.FTP_SERVER_DIR || './www/' }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR || './' }}
           dry-run: ${{ inputs.simulacao }}
           state-name: .ftp-deploy-sync-state.json
           exclude: |
