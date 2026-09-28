@@ -28,7 +28,8 @@ RewriteRule ^contato/?$ /#contato [L,R=301,NE]
 # Conteúdo antigo que deixou de existir (notícias, feed, painel do WordPress)
 RewriteRule ^(noticias|feed|comments|author|category|tag)(/.*)?$ - [G,L]
 RewriteRule ^(wp-admin|wp-content|wp-includes|wp-json)(/.*)?$ - [G,L]
-RewriteRule ^(wp-login|xmlrpc|wp-cron|wp-config)\.php$ - [G,L]
+# Qualquer PHP do WordPress que ainda esteja no servidor fica inacessível
+RewriteRule ^(index|xmlrpc|wp-[a-z-]+)\.php$ - [G,L]
 
 # Arquivos internos do projeto nunca devem ser servidos
 RewriteRule (^|/)\.(git|claude|DS_Store) - [F,L]
