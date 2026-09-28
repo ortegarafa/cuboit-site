@@ -21,7 +21,7 @@ Cuboit is a Brazilian technology company (since 2015) that deploys and runs AI a
 - Plataforma; Plataforma + Consultoria; Enterprise (setores regulados e governo, nuvem soberana, SLA 24x7).
 
 ## Casos de uso (hipotéticos)
-- [Agentes de IA para clínicas: agenda e prontuário](https://cuboit.com.br/casos/clinicas-agenda-prontuario/): Uma empresa de serviços médicos oferece às clínicas clientes um agente de agendamento no WhatsApp e um agente que resume o prontuário para o médico, com fonte em cada informação.
+- [Agentes de IA para um ERP médico: agenda e prontuário em centenas de clínicas](https://cuboit.com.br/casos/erp-medico-agenda-prontuario/): Uma empresa de software médico, que fornece chat e prontuário eletrônico para centenas de clínicas, incorpora ao seu sistema um agente de agendamento e um agente que resume o prontuário, com a marca dela.
 - [Agentes de IA para prefeituras e governos: documentação de todas as secretarias](https://cuboit.com.br/casos/governo-documentacao/): Uma prefeitura ou governo estadual organiza documentos de todas as secretarias num só lugar, com agentes que respondem servidores e cidadãos sempre citando a fonte e registrando cada decisão.
 
 ## Links

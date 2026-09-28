@@ -6,6 +6,7 @@ Uso:
 
 Reaproveita o <head>, o cabeçalho e o rodapé de index.html (PT) e en/index.html (EN),
 então rode de novo sempre que mudar o menu ou o rodapé da página inicial.
+Também atualiza as chamadas dos casos na página inicial, o sitemap.xml e o llms.txt.
 """
 import json
 import os
@@ -24,65 +25,67 @@ NOTA_EN = 'Hypothetical scenario, created to show how the platform works. Result
 
 CASOS = [
     {
-        'pt_slug': 'clinicas-agenda-prontuario',
-        'en_slug': 'clinics-scheduling-records',
+        'pt_slug': 'erp-medico-agenda-prontuario',
+        'en_slug': 'medical-software-scheduling-records',
         'pt': dict(
-            titulo='Agentes de IA para clínicas: agenda e prontuário',
-            desc='Caso de uso hipotético: uma empresa de serviços médicos oferece às clínicas clientes agentes de IA para agendamento no WhatsApp e resumo de prontuário com fontes, com privacidade conforme a LGPD.',
+            titulo='Agentes de IA para um ERP médico: agenda e prontuário em centenas de clínicas',
+            desc='Caso de uso hipotético: uma empresa de software médico, que fornece chat e prontuário eletrônico para centenas de clínicas, incorpora ao seu sistema agentes de IA para agendamento e leitura de prontuário, com dados isolados por clínica e LGPD.',
             tag='Caso de uso · Saúde',
-            h1='Agentes de IA para uma rede de clínicas: <span class="grad">agenda e prontuário.</span>',
-            chamada='Uma empresa de serviços médicos oferece às clínicas clientes um agente de agendamento no WhatsApp e um agente que resume o prontuário para o médico, com fonte em cada informação.',
-            lead='Uma empresa de serviços médicos atende várias clínicas e quer oferecer agentes de IA como parte do seu serviço. Cada clínica tem duas dores: a recepção não dá conta de marcar e remarcar consultas, e o profissional chega à consulta sem tempo de ler o histórico do paciente.',
-            dores=[('Recepção sobrecarregada', 'Telefone e WhatsApp lotados de pedidos de marcação, remarcação e confirmação, muitos fora do horário comercial.'),
-                   ('Faltas e horários vazios', 'Sem confirmação e lembrete, pacientes faltam e a agenda fica com buracos que ninguém consegue preencher a tempo.'),
-                   ('Pouco tempo antes da consulta', 'O profissional abre o prontuário na hora e precisa garimpar exames, laudos e anotações antigas.')],
-            solucao='A solução: dois agentes, uma plataforma',
-            agentes=[('i-cal', 'violet', 'Agente de agendamento', 'Atende pacientes no WhatsApp e no site. Marca, remarca, confirma e envia lembretes direto na agenda de cada clínica, seguindo as regras dela: especialidades, convênios, horários e tempo de consulta. Pedidos fora do padrão vão para a recepção, com a conversa inteira.'),
-                     ('i-doc', 'teal', 'Agente de prontuário', 'Para os profissionais de saúde. Lê o histórico do paciente e entrega um resumo antes da consulta, com a fonte de cada informação: documento e data. Não faz diagnóstico nem prescrição; a decisão é sempre do profissional.')],
-            jornada_t='A jornada de um paciente',
-            jornada=[('i-chat', 'blue', 'Paciente', 'Pede um horário pelo WhatsApp às 22h.'),
-                     ('i-cal', 'violet', 'Agente de agendamento', 'Mostra horários livres, marca a consulta e envia lembrete na véspera.'),
-                     ('i-hand', 'orange', 'Recepção', 'Recebe só as exceções, como um encaixe urgente.'),
-                     ('i-doc', 'teal', 'Agente de prontuário', 'Antes da consulta, entrega ao médico um resumo com as fontes.'),
+            h1='Agentes de IA dentro de um ERP médico: <span class="grad">agenda e prontuário para centenas de clínicas.</span>',
+            chamada='Uma empresa de software médico, que fornece chat e prontuário eletrônico para centenas de clínicas, incorpora ao seu sistema um agente de agendamento e um agente que resume o prontuário, com a marca dela.',
+            lead='Uma empresa de software médico fornece sistema de gestão, chat com pacientes e prontuário eletrônico para centenas de clínicas. Os clientes pedem IA: querem que o chat marque consultas sozinho e que o médico receba um resumo do prontuário antes de atender. Fazer isso internamente exigiria uma equipe de IA, uma infraestrutura segura para dados de saúde e um custo por clínica que coubesse no preço do sistema.',
+            dores=[('Clientes pedindo IA', 'As clínicas querem agendamento automático e resumo de prontuário, e os concorrentes já anunciam recursos de IA.'),
+                   ('Escala com isolamento', 'São centenas de clínicas, cada uma com suas regras, agendas e pacientes. Os dados de uma nunca podem aparecer para outra.'),
+                   ('Custo e risco', 'Uma IA genérica cobrada por uso pode comer a margem do produto, e um erro com dado de saúde vira problema jurídico e de reputação.')],
+            solucao='A solução: agentes dentro do produto, com a marca do ERP',
+            agentes=[('i-cal', 'violet', 'Agente de agendamento no chat', 'Funciona dentro do chat que o ERP já oferece às clínicas, inclusive no WhatsApp. Marca, remarca, confirma e envia lembretes na agenda do próprio sistema, seguindo as regras de cada clínica. O que foge do padrão vai para a recepção, com a conversa inteira.'),
+                     ('i-doc', 'teal', 'Agente de leitura de prontuário', 'Dentro do prontuário eletrônico, entrega ao profissional um resumo do histórico antes da consulta, com a fonte de cada informação: documento e data. Não faz diagnóstico nem prescrição; a decisão é sempre do profissional.'),
+                     ('i-chip', 'orange', 'Integração com o ERP', 'A Cuboit conecta os agentes à agenda, ao chat e ao prontuário do sistema por API. As clínicas usam os recursos como parte do software que já conhecem, com a marca da empresa.')],
+            jornada_t='A jornada de um paciente em uma das clínicas',
+            jornada=[('i-chat', 'blue', 'Paciente', 'Pede um horário às 22h pelo WhatsApp da clínica, atendido pelo chat do ERP.'),
+                     ('i-cal', 'violet', 'Agente de agendamento', 'Consulta a agenda no próprio sistema, marca a consulta e envia lembrete na véspera.'),
+                     ('i-hand', 'orange', 'Recepção da clínica', 'Recebe só as exceções, como um encaixe urgente.'),
+                     ('i-doc', 'teal', 'Agente de prontuário', 'Ao abrir o atendimento, o médico vê um resumo do histórico com as fontes.'),
                      ('i-user', 'pink', 'Médico', 'Confere as fontes, atende e decide. Cada acesso fica registrado.')],
-            cuidados_t='Privacidade e segurança',
-            cuidados=['Dados de cada clínica isolados, sem compartilhamento entre clínicas', 'Acesso ao prontuário só com perfil autorizado, e cada leitura registrada',
+            cuidados_t='Privacidade, segurança e controle',
+            cuidados=['Cada clínica é um ambiente isolado: os dados nunca se misturam entre clientes do ERP', 'Acesso ao prontuário só com perfil autorizado, e cada leitura registrada',
                       'Dados de saúde tratados como dados sensíveis, conforme a LGPD', 'Resumo sempre com fonte, para o profissional conferir no original',
-                      'A empresa acompanha todas as clínicas no Cubo Flow, com custo por clínica', 'Integração com o sistema de agenda e prontuário que a clínica já usa'],
-            valor_t='Por que funciona para a empresa de serviços médicos',
-            valor='Ela passa a oferecer agentes de IA como parte do próprio serviço, com a marca dela, sem montar uma equipe de IA. A Cuboit implanta, opera e mantém; a empresa acompanha cada clínica num painel e sabe quanto custa cada atendimento.',
-            etapas=[('Diagnóstico', 'Regras de agenda, sistemas usados e tipos de documento do prontuário.', '2 semanas'),
-                    ('Piloto em uma clínica', 'Agendamento no WhatsApp e resumo de prontuário para uma equipe.', '4 a 6 semanas'),
-                    ('Expansão', 'Novas clínicas entram com a mesma base e regras próprias.', 'por clínica')],
+                      'Painel com uso e custo por clínica, para o ERP definir preço e margem', 'Recursos ligados clínica a clínica, como módulo adicional do sistema'],
+            valor_t='Por que funciona para a empresa de software médico',
+            valor='Ela lança recursos de IA no próprio produto sem montar uma equipe de IA e pode vendê-los como módulo adicional para toda a base de clínicas. A Cuboit implanta, opera e mantém os agentes; a empresa acompanha uso e custo de cada clínica num painel e controla a margem.',
+            etapas=[('Diagnóstico', 'APIs do ERP, regras de agenda e estrutura do prontuário.', '2 a 3 semanas'),
+                    ('Piloto com algumas clínicas', 'Agendamento no chat e resumo de prontuário para um grupo de clínicas clientes.', '4 a 6 semanas'),
+                    ('Liberação para a base', 'O módulo é oferecido às demais clínicas e ligado clínica a clínica.', 'contínuo')],
         ),
         'en': dict(
-            titulo='AI agents for clinics: scheduling and medical records',
-            desc='Hypothetical use case: a medical services company offers its client clinics AI agents for WhatsApp scheduling and sourced medical record summaries, with health data protected.',
+            titulo='AI agents for medical software: scheduling and records across hundreds of clinics',
+            desc='Hypothetical use case: a medical software company that provides chat and electronic health records to hundreds of clinics builds AI agents for scheduling and record summaries into its product, with each clinic’s data isolated.',
             tag='Use case · Healthcare',
-            h1='AI agents for a network of clinics: <span class="grad">scheduling and medical records.</span>',
-            chamada='A medical services company offers its client clinics a WhatsApp scheduling agent and an agent that summarizes medical records for doctors, citing every source.',
-            lead='A medical services company serves several clinics and wants to offer AI agents as part of its service. Each clinic has two pains: the front desk can’t keep up with booking and rescheduling, and doctors walk into appointments without time to read the patient’s history.',
-            dores=[('Overloaded front desk', 'Phones and WhatsApp full of booking, rescheduling and confirmation requests, many after hours.'),
-                   ('No-shows and empty slots', 'Without confirmations and reminders, patients miss visits and gaps open up that nobody can fill in time.'),
-                   ('Little time before the visit', 'Doctors open the record on the spot and have to dig through old tests, reports and notes.')],
-            solucao='The solution: two agents, one platform',
-            agentes=[('i-cal', 'violet', 'Scheduling agent', 'Serves patients on WhatsApp and the web. Books, reschedules, confirms and sends reminders directly in each clinic’s calendar, following its rules: specialties, insurers, hours and visit length. Unusual requests go to the front desk with the full conversation.'),
-                     ('i-doc', 'teal', 'Medical records agent', 'For healthcare professionals. Reads the patient’s history and delivers a summary before the visit, citing the source of every item: document and date. It does not diagnose or prescribe; the decision always stays with the professional.')],
-            jornada_t='One patient’s journey',
-            jornada=[('i-chat', 'blue', 'Patient', 'Asks for an appointment on WhatsApp at 10 pm.'),
-                     ('i-cal', 'violet', 'Scheduling agent', 'Shows open slots, books the visit and sends a reminder the day before.'),
-                     ('i-hand', 'orange', 'Front desk', 'Only gets the exceptions, such as an urgent same-day slot.'),
-                     ('i-doc', 'teal', 'Medical records agent', 'Before the visit, gives the doctor a summary with sources.'),
+            h1='AI agents inside medical practice software: <span class="grad">scheduling and records for hundreds of clinics.</span>',
+            chamada='A medical software company that provides chat and electronic health records to hundreds of clinics builds a scheduling agent and a record summary agent into its product, under its own brand.',
+            lead='A medical software company provides practice management, patient chat and electronic health records to hundreds of clinics. Its customers are asking for AI: they want the chat to book appointments on its own and doctors to get a record summary before each visit. Building that in-house would take an AI team, secure infrastructure for health data and a per-clinic cost that fits the product’s price.',
+            dores=[('Customers asking for AI', 'Clinics want automatic scheduling and record summaries, and competitors already advertise AI features.'),
+                   ('Scale with isolation', 'Hundreds of clinics, each with its own rules, calendars and patients. One clinic’s data can never show up for another.'),
+                   ('Cost and risk', 'Generic pay-per-use AI can eat the product’s margin, and a mistake with health data becomes a legal and reputational problem.')],
+            solucao='The solution: agents inside the product, under the software’s brand',
+            agentes=[('i-cal', 'violet', 'Scheduling agent in the chat', 'Runs inside the chat the software already offers clinics, including WhatsApp. Books, reschedules, confirms and sends reminders in the system’s own calendar, following each clinic’s rules. Unusual requests go to the front desk with the full conversation.'),
+                     ('i-doc', 'teal', 'Record summary agent', 'Inside the electronic health record, gives the professional a summary of the history before the visit, citing the source of every item: document and date. It does not diagnose or prescribe; the decision always stays with the professional.'),
+                     ('i-chip', 'orange', 'Integration with the software', 'Cuboit connects the agents to the software’s calendar, chat and records through its API. Clinics use the features as part of the software they already know, under the company’s brand.')],
+            jornada_t='One patient’s journey at one of the clinics',
+            jornada=[('i-chat', 'blue', 'Patient', 'Asks for an appointment at 10 pm on the clinic’s WhatsApp, handled by the software’s chat.'),
+                     ('i-cal', 'violet', 'Scheduling agent', 'Checks the calendar in the system itself, books the visit and sends a reminder the day before.'),
+                     ('i-hand', 'orange', 'Clinic front desk', 'Only gets the exceptions, such as an urgent same-day slot.'),
+                     ('i-doc', 'teal', 'Record summary agent', 'When the visit opens, the doctor sees a summary of the history with sources.'),
                      ('i-user', 'pink', 'Doctor', 'Checks the sources, sees the patient and decides. Every access is logged.')],
-            cuidados_t='Privacy and security',
-            cuidados=['Each clinic’s data is isolated and never shared across clinics', 'Record access only for authorized roles, with every read logged',
+            cuidados_t='Privacy, security and control',
+            cuidados=['Each clinic is an isolated environment: data never mixes between the software’s customers', 'Record access only for authorized roles, with every read logged',
                       'Health data treated as sensitive data under Brazil’s LGPD', 'Summaries always cite the source, so professionals can check the original',
-                      'The company oversees every clinic in Cubo Flow, with cost per clinic', 'Integration with the scheduling and records system each clinic already uses'],
-            valor_t='Why it works for the medical services company',
-            valor='It offers AI agents as part of its own service, under its own brand, without building an AI team. Cuboit deploys, runs and maintains the agents; the company follows every clinic on a dashboard and knows what each conversation costs.',
-            etapas=[('Assessment', 'Scheduling rules, systems in use and the document types in the medical record.', '2 weeks'),
-                    ('Pilot in one clinic', 'WhatsApp scheduling and record summaries for one team.', '4–6 weeks'),
-                    ('Expansion', 'New clinics join on the same foundation with their own rules.', 'per clinic')],
+                      'Dashboard with usage and cost per clinic, so the company can set price and margin', 'Features switched on clinic by clinic, as an add-on module'],
+            valor_t='Why it works for the medical software company',
+            valor='It launches AI features in its own product without building an AI team and can sell them as an add-on to its entire clinic base. Cuboit deploys, runs and maintains the agents; the company tracks usage and cost per clinic on a dashboard and controls its margin.',
+            etapas=[('Assessment', 'The software’s APIs, scheduling rules and health record structure.', '2–3 weeks'),
+                    ('Pilot with a few clinics', 'Scheduling in the chat and record summaries for a group of client clinics.', '4–6 weeks'),
+                    ('Roll-out to the base', 'The module is offered to the other clinics and switched on clinic by clinic.', 'ongoing')],
         ),
     },
     {
@@ -302,7 +305,56 @@ def pagina(caso, idioma):
     return head + '<body>\n\n' + sprite + header + '\n\n' + main + '\n' + footer + '\n\n' + script + '\n</body>\n</html>\n'
 
 
+CHAMADAS = {
+    'pt': dict(arquivo='index.html', rotulo='Casos de uso · cenários ilustrativos', ler='Ler o caso'),
+    'en': dict(arquivo='en/index.html', rotulo='Use cases · illustrative scenarios', ler='Read the case'),
+}
+
+
+def atualizar_home(idioma):
+    """Reescreve as chamadas dos casos na seção Cases da página inicial."""
+    C, I = CHAMADAS[idioma], IDIOMAS[idioma]
+    caminho = os.path.join(RAIZ, C['arquivo'])
+    s = open(caminho, encoding='utf-8').read()
+    cards = ''.join('''
+      <a class="case-feature" href="%s%s/">
+        <div><span class="uc-tag">%s</span><h3>%s</h3><p>%s</p></div>
+        <span class="go">%s <span aria-hidden="true">→</span></span>
+      </a>''' % (I['base'], c[idioma + '_slug'], c[idioma]['tag'], c[idioma]['titulo'], c[idioma]['chamada'], C['ler']) for c in CASOS)
+    bloco = '    <p class="eyebrow case-features-label">%s</p>\n    <div class="case-features">%s\n    </div>\n' % (C['rotulo'], cards)
+    s, n = re.subn(r'    <p class="eyebrow case-features-label">.*?</p>\n    <div class="case-features">.*?\n    </div>\n', lambda m: bloco, s, flags=re.S)
+    if n != 1:
+        raise SystemExit('Não encontrei as chamadas dos casos em ' + C['arquivo'])
+    open(caminho, 'w', encoding='utf-8').write(s)
+
+
+def atualizar_sitemap():
+    caminho = os.path.join(RAIZ, 'sitemap.xml')
+    s = open(caminho, encoding='utf-8').read()
+    s = re.sub(r'  <url>\n    <loc>https://cuboit\.com\.br/(casos|en/cases)/.*?</url>\n', '', s, flags=re.S)
+    extra = ''
+    for c in CASOS:
+        u_pt, u_en = url(c, 'pt'), url(c, 'en')
+        for loc in (u_pt, u_en):
+            extra += ('  <url>\n    <loc>%s</loc>\n    <lastmod>2026-09-28</lastmod>\n'
+                      '    <xhtml:link rel="alternate" hreflang="pt-BR" href="%s"/>\n'
+                      '    <xhtml:link rel="alternate" hreflang="en" href="%s"/>\n  </url>\n') % (loc, u_pt, u_en)
+    open(caminho, 'w', encoding='utf-8').write(s.replace('</urlset>', extra + '</urlset>'))
+
+
+def atualizar_llms():
+    caminho = os.path.join(RAIZ, 'llms.txt')
+    s = open(caminho, encoding='utf-8').read()
+    lista = ''.join('- [%s](%s): %s\n' % (c['pt']['titulo'], url(c, 'pt'), c['pt']['chamada']) for c in CASOS)
+    s = re.sub(r'## Casos de uso.*?\n\n', lambda m: '## Casos de uso (hipotéticos)\n' + lista + '\n', s, flags=re.S)
+    open(caminho, 'w', encoding='utf-8').write(s)
+
+
 def main():
+    import shutil
+    for idioma in ('pt', 'en'):
+        pasta = os.path.join(RAIZ, IDIOMAS[idioma]['base'].strip('/'))
+        shutil.rmtree(pasta, ignore_errors=True)  # remove casos que saíram da lista
     for caso in CASOS:
         for idioma in ('pt', 'en'):
             destino = os.path.join(RAIZ, IDIOMAS[idioma]['base'].strip('/'), caso[idioma + '_slug'], 'index.html')
@@ -310,6 +362,11 @@ def main():
             with open(destino, 'w', encoding='utf-8') as f:
                 f.write(pagina(caso, idioma))
             print('gerado', os.path.relpath(destino, RAIZ))
+    for idioma in ('pt', 'en'):
+        atualizar_home(idioma)
+    atualizar_sitemap()
+    atualizar_llms()
+    print('página inicial, sitemap.xml e llms.txt atualizados')
 
 
 if __name__ == '__main__':

@@ -447,6 +447,6 @@ section[id]{scroll-margin-top:72px}
 .case-page .usecase{grid-template-columns:minmax(0,1fr)}
 .case-page .uc-agents{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .case-page .uc-journey{border-left:0;border-top:1px solid var(--line)}
-.case-page .uc-journey ol{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.case-page .uc-journey ol{grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px}
 .case-page .uc-journey li{padding-bottom:0}
 .case-page .uc-journey li::after{display:none}
