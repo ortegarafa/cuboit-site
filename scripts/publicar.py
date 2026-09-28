@@ -3,7 +3,6 @@
 
 Uso:
     python3 scripts/publicar.py HOST USUARIO [PASTA_REMOTA]
-    python3 scripts/publicar.py HOST USUARIO --log     (mostra o registro de envios do formulário)
 
 A senha é pedida no terminal e não é salva. Nada é apagado no servidor:
 arquivos com o mesmo nome são substituídos e o resto fica como está.
@@ -16,7 +15,7 @@ import sys
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Só o que deve ficar público
-ARQUIVOS = [".htaccess", "index.html", "404.html", "enviar.php",
+ARQUIVOS = [".htaccess", "index.html", "404.html",
             "robots.txt", "sitemap.xml", "llms.txt"]
 PASTAS = ["en", "css", "js", "images"]
 IGNORAR = {".DS_Store"}
@@ -61,9 +60,7 @@ def main():
         print(__doc__)
         sys.exit(1)
     host, usuario = sys.argv[1], sys.argv[2]
-    so_log = "--log" in sys.argv[3:]
-    extras = [a for a in sys.argv[3:] if a != "--log"]
-    base = (extras[0] if extras else "www").strip("/")
+    base = (sys.argv[3] if len(sys.argv) > 3 else "www").strip("/")
 
     lista = [a for a in ARQUIVOS if os.path.exists(os.path.join(RAIZ, a))]
     for pasta in PASTAS:
@@ -72,8 +69,7 @@ def main():
                 if nome not in IGNORAR:
                     lista.append(os.path.relpath(os.path.join(dirpath, nome), RAIZ))
 
-    if not so_log:
-        print(f"{len(lista)} arquivos serão enviados para {host}:/{base}/")
+    print(f"{len(lista)} arquivos serão enviados para {host}:/{base}/")
     senha = getpass.getpass(f"Senha de FTP de {usuario}: ")
     ftp = conectar(host, usuario, senha)
     ftp.encoding = "latin-1"  # servidor antigo tem nomes com acento fora do UTF-8
@@ -91,17 +87,6 @@ def main():
         print("Rode de novo informando a pasta certa como terceiro argumento.")
         ftp.quit()
         sys.exit(2)
-
-    if so_log:
-        linhas = []
-        try:
-            ftp.retrlines(f"RETR {base}/.envios.log", linhas.append)
-            print("Registro de envios do formulário (mais recentes no fim):")
-            print("\n".join(linhas[-20:]) or "(vazio)")
-        except ftplib.error_perm:
-            print("Ainda não há registro: o formulário não foi usado desde a última publicação.")
-        ftp.quit()
-        return
 
     for rel in lista:
         rel = rel.replace(os.sep, "/")

@@ -31,6 +31,9 @@ RewriteRule ^(wp-admin|wp-content|wp-includes|wp-json)(/.*)?$ - [G,L]
 # Qualquer PHP do WordPress que ainda esteja no servidor fica inacessível
 RewriteRule ^(index|xmlrpc|wp-[a-z-]+)\.php$ - [G,L]
 
+# Envio antigo por PHP (substituído pelo Formspree)
+RewriteRule ^enviar\.php$ - [G,L]
+
 # Arquivos internos do projeto nunca devem ser servidos
 RewriteRule (^|/)\.(git|claude|DS_Store|envios\.log) - [F,L]
 RewriteRule ^(PUBLICAR\.md|README\.md|proposta-comunicacao\.html|\.ftp-deploy-sync-state\.json)$ - [F,L]

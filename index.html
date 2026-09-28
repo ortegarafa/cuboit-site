@@ -545,8 +545,9 @@
           <span>cuboit.com.br</span>
         </div>
       </div>
-      <form id="leadForm" novalidate data-endpoint="enviar.php">
-        <div hidden><label>Não preencha este campo <input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <form id="leadForm" novalidate data-endpoint="">
+        <input type="hidden" name="_subject" value="Novo pedido de diagnóstico — site Cuboit">
+        <div hidden><label>Não preencha este campo <input name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
         <div class="row">
           <div><label for="nome">Nome</label><input id="nome" name="nome" required autocomplete="name"></div>
           <div><label for="empresa">Empresa</label><input id="empresa" name="empresa" required autocomplete="organization"></div>
