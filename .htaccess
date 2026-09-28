@@ -1,0 +1,52 @@
+# Cuboit — configuração do Apache (KingHost)
+
+DirectoryIndex index.html
+Options -Indexes
+AddDefaultCharset UTF-8
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# www → sem www
+RewriteCond %{HTTP_HOST} ^www\.cuboit\.com\.br$ [NC]
+RewriteRule ^ https://cuboit.com.br%{REQUEST_URI} [L,R=301]
+
+# Força HTTPS (checa também o cabeçalho do proxy para não entrar em loop)
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://cuboit.com.br%{REQUEST_URI} [L,R=301]
+
+# Endereços do site antigo (WordPress) → seções da página nova
+RewriteRule ^home/?$ / [L,R=301]
+RewriteRule ^institucional/?$ /#como-funciona [L,R=301,NE]
+RewriteRule ^servicos(/.*)?$ /#consultoria [L,R=301,NE]
+RewriteRule ^cases(/.*)?$ /#cases [L,R=301,NE]
+RewriteRule ^cases-em-destaque(/.*)?$ /#cases [L,R=301,NE]
+RewriteRule ^contato/?$ /#contato [L,R=301,NE]
+
+# Conteúdo antigo que deixou de existir (notícias, feed, painel do WordPress)
+RewriteRule ^(noticias|feed|comments|author|category|tag)(/.*)?$ - [G,L]
+RewriteRule ^(wp-admin|wp-content|wp-includes|wp-json)(/.*)?$ - [G,L]
+RewriteRule ^(wp-login|xmlrpc|wp-cron|wp-config)\.php$ - [G,L]
+
+# Arquivos internos do projeto nunca devem ser servidos
+RewriteRule (^|/)\.(git|claude|DS_Store) - [F,L]
+RewriteRule ^(PUBLICAR\.md|proposta-comunicacao\.html)$ - [F,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType text/css "access plus 7 days"
+ExpiresByType application/javascript "access plus 7 days"
+ExpiresByType image/svg+xml "access plus 30 days"
+ExpiresByType image/png "access plus 30 days"
+ExpiresByType image/x-icon "access plus 30 days"
+ExpiresByType text/html "access plus 0 seconds"
+</IfModule>

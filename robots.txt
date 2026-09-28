@@ -1,0 +1,39 @@
+# Cuboit — cuboit.com.br
+# Buscadores e assistentes de IA são bem-vindos em todo o site público.
+
+User-agent: *
+Allow: /
+
+# Google (Busca e Gemini)
+User-agent: Googlebot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+# OpenAI (ChatGPT)
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: GPTBot
+Allow: /
+
+# Microsoft Bing (também alimenta buscas de assistentes)
+User-agent: Bingbot
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+
+Sitemap: https://cuboit.com.br/sitemap.xml

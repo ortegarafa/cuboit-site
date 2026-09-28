@@ -1,0 +1,22 @@
+# Cuboit
+
+> A Cuboit é uma empresa brasileira de tecnologia (desde 2015) que implementa e opera agentes de IA dentro dos processos das empresas. Oferece uma plataforma própria e consultoria de implementação, com foco em custo por atendimento baixo, respostas com fonte e supervisão humana.
+
+Cuboit is a Brazilian technology company (since 2015) that deploys and runs AI agents inside business processes, combining its own platform with implementation consulting.
+
+## Plataforma
+- Cubo Core: ambiente seguro, base de conhecimento da empresa e motor de eficiência que resolve a maior parte dos casos por uma fração do custo de IAs genéricas; casos incomuns sobem para um motor mais avançado ou para uma pessoa.
+- Cubo Flow: quadro de processos no estilo kanban em que agentes de IA e pessoas trabalham nos mesmos casos, com regras de aprovação humana por valor, risco ou tipo de caso.
+- Cubo Chat: atendimento omnichannel (WhatsApp, Microsoft Teams, Slack, site) com citação da fonte em cada resposta e transbordo para humanos.
+- Transparência: registro de auditoria de cada ação (agente, fonte, custo, aprovação) e painel de custo por agente.
+
+## Consultoria
+- Diagnóstico (2 semanas), piloto em um processo real (4 a 6 semanas), otimização e escala (6 a 10 semanas) e operação assistida contínua.
+
+## Formas de contratação
+- Plataforma; Plataforma + Consultoria; Enterprise (setores regulados e governo, nuvem soberana, SLA 24x7).
+
+## Links
+- [Site em português](https://cuboit.com.br/)
+- [Site em inglês](https://cuboit.com.br/en/)
+- [Contato](https://cuboit.com.br/#contato): contato@cuboit.com.br

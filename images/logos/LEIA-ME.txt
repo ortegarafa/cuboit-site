@@ -1,0 +1,13 @@
+Logos cuboit
+
+png/  – imagens com fundo transparente, alta resolução (use em documentos, apresentações, redes sociais)
+svg/  – vetores (use no site e para impressão; escalam sem perder qualidade)
+
+claro   = para fundos claros (texto escuro)
+escuro  = para fundos escuros (texto branco)
+preto / branco = versões de uma cor (carimbo, gravação, fundos com foto)
+simbolo-app = ícone em bloco escuro (perfil de redes sociais, app)
+
+Cores: laranja #FF7A1A · magenta #F2317A · violeta #6B3BF5 · grafite #16131F
+Fonte: Sora (Google Fonts) – Bold 700 no nome, SemiBold 600 na frase.
+Obs.: os SVGs com texto usam a fonte embutida. Para gráfica, peça para converter o texto em curvas (ou instale a Sora).
