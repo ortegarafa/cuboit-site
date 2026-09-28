@@ -37,8 +37,8 @@
 
   // Menu mobile
   var btn=$('menuBtn'),menu=$('menu');
-  btn.addEventListener('click',function(){var o=menu.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
-  menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');btn.setAttribute('aria-expanded','false')}});
+  if(btn&&menu)btn.addEventListener('click',function(){var o=menu.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+  if(menu)menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');btn.setAttribute('aria-expanded','false')}});
 
   // Simulador: moeda definida em <html data-currency>
   var cur=root.getAttribute('data-currency')||'BRL';
@@ -58,7 +58,7 @@
     $('barMix').style.width=Math.max(2,mix/big*100)+'%';
     $('pct').textContent=Math.round(save/big*100)+'%';$('abs').textContent=m0.format(save)+T.perMonth;
   }
-  ['req','msgs','big','small','share'].forEach(function(id){$(id).addEventListener('input',calc)});calc();
+  if($('req')){['req','msgs','big','small','share'].forEach(function(id){$(id).addEventListener('input',calc)});calc();}
 
   // Telefone: país com bandeira + DDI separado + máscara por país
   // [código ISO, DDI, máscaras por quantidade de dígitos ('#' = dígito)]
@@ -161,7 +161,7 @@
 
   // Formulário: envia para o serviço em data-endpoint e só confirma quando o envio dá certo
   var form=$('leadForm'), ok=$('okMsg'), err=$('errMsg');
-  form.addEventListener('submit',function(e){
+  if(form)form.addEventListener('submit',function(e){
     e.preventDefault();
     ok.classList.remove('show');err.classList.remove('show');
     if(!form.checkValidity()){form.reportValidity();return}

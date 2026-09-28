@@ -50,6 +50,7 @@ robots.txt
 sitemap.xml
 llms.txt
 en/
+casos/
 css/
 js/
 images/

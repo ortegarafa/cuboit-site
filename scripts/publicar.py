@@ -17,7 +17,7 @@ RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Só o que deve ficar público
 ARQUIVOS = [".htaccess", "index.html", "404.html",
             "robots.txt", "sitemap.xml", "llms.txt"]
-PASTAS = ["en", "css", "js", "images"]
+PASTAS = ["en", "casos", "css", "js", "images"]
 IGNORAR = {".DS_Store"}
 
 

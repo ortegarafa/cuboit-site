@@ -14,4 +14,28 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://cuboit.com.br/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cuboit.com.br/"/>
   </url>
+  <url>
+    <loc>https://cuboit.com.br/casos/clinicas-agenda-prontuario/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cuboit.com.br/casos/clinicas-agenda-prontuario/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cuboit.com.br/en/cases/clinics-scheduling-records/"/>
+  </url>
+  <url>
+    <loc>https://cuboit.com.br/en/cases/clinics-scheduling-records/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cuboit.com.br/casos/clinicas-agenda-prontuario/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cuboit.com.br/en/cases/clinics-scheduling-records/"/>
+  </url>
+  <url>
+    <loc>https://cuboit.com.br/casos/governo-documentacao/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cuboit.com.br/casos/governo-documentacao/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cuboit.com.br/en/cases/government-documents/"/>
+  </url>
+  <url>
+    <loc>https://cuboit.com.br/en/cases/government-documents/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cuboit.com.br/casos/governo-documentacao/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cuboit.com.br/en/cases/government-documents/"/>
+  </url>
 </urlset>

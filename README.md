@@ -6,10 +6,11 @@ Site estático (HTML, CSS e JS) hospedado na KingHost. O formulário é enviado 
 
 ```
 index.html      página em português
-en/             página em inglês
+en/             página em inglês (e en/cases/)
+casos/          páginas dos casos de uso, geradas por scripts/gerar_casos.py
 css/  js/       estilos e scripts compartilhados
 images/         logos e favicons
-scripts/        publicar.py (envio por FTP a partir do seu computador)
+scripts/        publicar.py (envio por FTP) e gerar_casos.py (textos dos casos de uso)
 .htaccess       HTTPS, redirecionamentos do site antigo, cache
 robots.txt  sitemap.xml  llms.txt   buscadores e assistentes de IA
 404.html        página de erro
