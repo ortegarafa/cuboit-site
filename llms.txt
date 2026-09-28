@@ -4,6 +4,10 @@
 
 Cuboit is a Brazilian technology company (since 2015) that deploys and runs AI agents inside business processes, combining its own platform with implementation consulting.
 
+## Para quem é
+- Médias e grandes organizações, públicas e privadas, com alto volume de atendimentos e documentos, sistemas legados e exigência de auditoria e LGPD.
+- Setores: financeiro e seguros; atendimento ao cliente; setor público; jurídico e compliance; cadeia de suprimentos; saúde e farmacêutico.
+
 ## Plataforma
 - Cubo Core: ambiente seguro, base de conhecimento da empresa e motor de eficiência que resolve a maior parte dos casos por uma fração do custo de IAs genéricas; casos incomuns sobem para um motor mais avançado ou para uma pessoa.
 - Cubo Flow: quadro de processos no estilo kanban em que agentes de IA e pessoas trabalham nos mesmos casos, com regras de aprovação humana por valor, risco ou tipo de caso.

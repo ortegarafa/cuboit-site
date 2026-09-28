@@ -47,7 +47,13 @@
     "automação de processos",
     "atendimento com IA no WhatsApp",
     "redução de custo de IA",
-    "supervisão humana de IA"
+    "supervisão humana de IA",
+    "Financeiro e seguros",
+    "Atendimento ao cliente",
+    "Setor público",
+    "Jurídico e compliance",
+    "Cadeia de suprimentos",
+    "Saúde e farmacêutico"
    ],
    "contactPoint": {
     "@type": "ContactPoint",
@@ -57,6 +63,10 @@
      "Portuguese",
      "English"
     ]
+   },
+   "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Médias e grandes organizações públicas e privadas"
    }
   },
   {
@@ -107,6 +117,14 @@
   {
    "@type": "FAQPage",
    "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Para quem são os agentes de IA da Cuboit?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Para médias e grandes organizações, públicas e privadas, com alto volume de atendimentos e documentos e exigência de auditoria e LGPD. Os setores principais são financeiro e seguros, atendimento ao cliente, setor público, jurídico e compliance, cadeia de suprimentos e saúde."
+     }
+    },
     {
      "@type": "Question",
      "name": "O que a Cuboit faz?",
@@ -167,7 +185,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="css/style.css?v=202609281819">
+<link rel="stylesheet" href="css/style.css?v=202609281915">
 </head>
 <body>
 
@@ -186,6 +204,13 @@
     <symbol id="i-chip" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></symbol>
     <symbol id="i-eye" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
     <symbol id="i-hand" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8 13V5.5a1.5 1.5 0 013 0V11m0-6.5a1.5 1.5 0 013 0V11m0-5a1.5 1.5 0 013 0v7c0 4-2.5 8-7 8-3 0-4.5-1.5-6-4l-2-3.5a1.5 1.5 0 012.5-1.6L8 13"/></symbol>
+
+    <symbol id="i-bank" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" d="M3 9l9-5 9 5M5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 20h18"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 14v-2a8 8 0 0116 0v2M4 14a2 2 0 002 2h1v-5H6a2 2 0 00-2 2zm16 0a2 2 0 01-2 2h-1v-5h1a2 2 0 012 2zM17 16v1a3 3 0 01-3 3h-2"/></symbol>
+    <symbol id="i-gov" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" d="M12 3v3M8 6h8l2 4H6l2-4zM6 10v8M10 10v8M14 10v8M18 10v8M4 20h16"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" d="M12 4v16M8 20h8M5 7h14M5 7l-3 6a3 3 0 006 0L5 7zm14 0l-3 6a3 3 0 006 0l-3-6z"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" d="M2 6h11v10H2zM13 10h4l3 3v3h-7"/><circle cx="6" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-health" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/></symbol>
   </defs>
 </svg>
 
@@ -201,7 +226,7 @@
       <li><a href="#processos">Plataforma</a></li>
       <li><a href="#consultoria">Consultoria</a></li>
       <li><a href="#planos">Planos</a></li>
-      <li><a href="#cases">Cases</a></li>
+      <li><a href="#setores">Setores</a></li>
     </ul>
     <div class="nav-cta">
       <div class="tools">
@@ -280,6 +305,28 @@
           <li>Consultoria Cuboit do diagnóstico à operação</li>
         </ul>
       </article>
+    </div>
+  </div>
+</section>
+
+<section id="setores">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Para quem é</span>
+      <h2>Feito para operações <span class="grad">que não podem errar.</span></h2>
+      <p class="lead">Médias e grandes organizações, públicas e privadas, com alto volume de atendimentos e documentos, sistemas que precisam conversar entre si e exigência de auditoria e LGPD.</p>
+    </div>
+    <div class="segs">
+      <article class="seg"><div class="tile t-blue"><svg><use href="#i-bank"/></svg></div><h3>Financeiro e seguros</h3><p>Conciliação, análise de crédito, sinistros e atendimento a clientes, com aprovação humana acima de limites de valor.</p></article>
+      <article class="seg"><div class="tile t-pink"><svg><use href="#i-headset"/></svg></div><h3>Atendimento ao cliente</h3><p>Primeiro atendimento no WhatsApp e no site, triagem e respostas com base nas políticas da empresa, 24 horas por dia.</p></article>
+      <article class="seg"><div class="tile t-violet"><svg><use href="#i-gov"/></svg></div><h3>Setor público</h3><p>Atendimento ao cidadão, triagem e classificação de processos e integração com sistemas legados, com trilha de auditoria.</p></article>
+      <article class="seg"><div class="tile t-orange"><svg><use href="#i-scale"/></svg></div><h3>Jurídico e compliance</h3><p>Consulta a normas, contratos e pareceres internos com citação da fonte, e revisão humana nos casos sensíveis.</p></article>
+      <article class="seg"><div class="tile t-teal"><svg><use href="#i-truck"/></svg></div><h3>Cadeia de suprimentos</h3><p>Pedidos, cotações, rastreamento e exceções de entrega tratados por agentes integrados ao ERP.</p></article>
+      <article class="seg"><div class="tile t-blue"><svg><use href="#i-health"/></svg></div><h3>Saúde e farmacêutico</h3><p>Orientação a pacientes e equipes com base em protocolos aprovados, com dados protegidos e escalonamento para profissionais.</p></article>
+    </div>
+    <div class="fit">
+      <b>A Cuboit faz sentido quando</b>
+      <ul><li>Sua equipe responde as mesmas perguntas centenas de vezes por dia</li><li>Processos dependem de documentos, normas e políticas internas</li><li>Há sistemas legados que precisam entrar na automação</li><li>Toda decisão precisa de registro, fonte e responsável</li><li>O custo de IA genérica já pesa ou vai pesar no orçamento</li></ul>
     </div>
   </div>
 </section>
@@ -511,6 +558,7 @@
       <h2>Dúvidas comuns <span class="grad">sobre agentes de IA.</span></h2>
     </div>
     <div class="faq-list">
+      <details><summary>Para quem são os agentes de IA da Cuboit?</summary><p>Para médias e grandes organizações, públicas e privadas, com alto volume de atendimentos e documentos e exigência de auditoria e LGPD. Os setores principais são financeiro e seguros, atendimento ao cliente, setor público, jurídico e compliance, cadeia de suprimentos e saúde.</p></details>
       <details><summary>O que a Cuboit faz?</summary><p>A Cuboit implementa e opera agentes de IA dentro dos processos das empresas. Oferece uma plataforma própria (Cubo Core, Cubo Flow e Cubo Chat) e consultoria de implementação, do diagnóstico à operação assistida.</p></details>
       <details><summary>Como a Cuboit reduz o custo de usar IA?</summary><p>A plataforma usa um motor de eficiência ajustado ao negócio de cada cliente, que resolve a maior parte dos atendimentos por uma fração do custo de IAs genéricas. Só os casos incomuns sobem para um motor mais avançado ou para uma pessoa. O custo de cada atendimento aparece num painel.</p></details>
       <details><summary>Como evitar que a IA invente respostas?</summary><p>Os agentes respondem apenas com base nos documentos da empresa e sempre citam a fonte. Amostras de respostas são auditadas continuamente, e perguntas fora do escopo ou de baixa confiança são encaminhadas para uma pessoa.</p></details>
@@ -596,6 +644,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=202609281819"></script>
+<script src="js/main.js?v=202609281915"></script>
 </body>
 </html>
