@@ -32,7 +32,7 @@ RewriteRule ^(wp-admin|wp-content|wp-includes|wp-json)(/.*)?$ - [G,L]
 RewriteRule ^(index|xmlrpc|wp-[a-z-]+)\.php$ - [G,L]
 
 # Arquivos internos do projeto nunca devem ser servidos
-RewriteRule (^|/)\.(git|claude|DS_Store) - [F,L]
+RewriteRule (^|/)\.(git|claude|DS_Store|envios\.log) - [F,L]
 RewriteRule ^(PUBLICAR\.md|README\.md|proposta-comunicacao\.html|\.ftp-deploy-sync-state\.json)$ - [F,L]
 </IfModule>
 

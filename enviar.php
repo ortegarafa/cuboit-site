@@ -70,16 +70,33 @@ $corpo = "Novo pedido pelo site cuboit.com.br\n\n"
        . "Processo que quer automatizar:\n$mensagem\n\n"
        . "Enviado em " . date('d/m/Y H:i') . " · IP " . ($_SERVER['REMOTE_ADDR'] ?? '-') . "\n";
 
-$cabecalhos = implode("\r\n", [
+// Formato recomendado pela KingHost: cabeçalhos separados por \n, Return-Path do domínio e sem 5º parâmetro
+$cabecalhos = implode("\n", [
     'From: Site Cuboit <' . REMETENTE . '>',
-    'Reply-To: ' . $nome . ' <' . $email . '>',
+    'Reply-To: ' . $email,
+    'Return-Path: ' . REMETENTE,
     'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=UTF-8',
     'Content-Transfer-Encoding: 8bit',
 ]);
 
 $assuntoCodificado = '=?UTF-8?B?' . base64_encode($assunto) . '?=';
-$enviado = mail(DESTINO, $assuntoCodificado, $corpo, $cabecalhos, '-f' . REMETENTE);
+$enviado = @mail(DESTINO, $assuntoCodificado, $corpo, $cabecalhos);
+$tentativa = 'sem -f';
+if (!$enviado) {
+    $enviado = @mail(DESTINO, $assuntoCodificado, $corpo, $cabecalhos, '-f' . REMETENTE);
+    $tentativa = 'com -f';
+}
+
+// Registro técnico de cada tentativa (sem dados pessoais), para diagnóstico
+$erro = error_get_last();
+@file_put_contents(__DIR__ . '/.envios.log', sprintf(
+    "%s | %s | %s | %s\n",
+    date('Y-m-d H:i:s'),
+    $enviado ? 'OK' : 'FALHOU',
+    $tentativa,
+    $enviado ? '-' : ($erro['message'] ?? 'mail() retornou false')
+), FILE_APPEND | LOCK_EX);
 
 if (!$enviado) {
     responder(500, ['ok' => false, 'erro' => 'envio']);
